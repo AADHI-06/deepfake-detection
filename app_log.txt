@@ -45,3 +45,10 @@ Press CTRL+C to quit
 127.0.0.1 - - [20/Jul/2026 23:57:24] "GET /favicon.ico HTTP/1.1" 404 -
 127.0.0.1 - - [20/Jul/2026 23:58:02] "GET /static/_test_no_face.mp4 HTTP/1.1" 304 -
 127.0.0.1 - - [20/Jul/2026 23:58:46] "POST /analyze HTTP/1.1" 400 -
+127.0.0.1 - - [21/Jul/2026 00:26:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:27:44] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:27:46] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:27:54] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:28:01] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:28:24] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2026 00:28:31] "POST /analyze HTTP/1.1" 200 -
