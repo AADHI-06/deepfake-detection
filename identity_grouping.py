@@ -1,5 +1,4 @@
-"""Identity-level grouping for a leakage-safe split (see CLAUDE.md Build
-Progress Log, step 4 for how this was discovered as necessary).
+"""Identity-level grouping for a leakage-safe split.
 
 Filename-level video-level splitting (data_split.py's original approach) is not
 sufficient for this dataset: the same actor appears in multiple distinct video

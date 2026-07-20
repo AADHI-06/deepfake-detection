@@ -5,7 +5,7 @@ __pycache__/
 .pytest_cache/
 
 # Dataset — FaceForensics++ requires its own license agreement to redistribute,
-# and it's 2GB+. Never commit; see CLAUDE.md for how it's expected to be placed.
+# and it's 2GB+. Never commit; see README.md for how it's expected to be placed.
 dataset/
 
 # Regenerable caches (face-embedding cache, extracted-feature cache, pretrained
@@ -16,8 +16,9 @@ feature_cache/
 # the folder itself is created on demand)
 uploads/
 
-# Ad hoc personal testing screenshots, not part of the build
-snapshots/
+# Claude Code's own project-instructions/build-log file — internal working
+# notes, not part of the public project deliverable.
+CLAUDE.md
 
 # OS/editor cruft
 Thumbs.db

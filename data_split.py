@@ -6,10 +6,10 @@ re-splitting, so re-running training doesn't reshuffle and silently create leaka
 This pools all real+fake videos from dataset/training/ and dataset/testing/
 together and re-splits by IDENTITY GROUP, not by filename. A prior filename-level
 split (no exact file appears twice) still let the same actor's face appear in
-both train and test under a different clip — see CLAUDE.md Build Progress Log,
-step 4, for how this was found (99% test accuracy on the filename-level split
-turned out to be inflated by exactly this). Groups come from identity_grouping.py:
-fake videos by source actor ID (parsed from the filename), real videos by face-
+both train and test under a different clip — a filename-level split originally
+scored a suspicious 99% test accuracy, which turned out to be inflated by
+exactly this identity leakage. Groups come from identity_grouping.py: fake
+videos by source actor ID (parsed from the filename), real videos by face-
 embedding cluster.
 """
 
