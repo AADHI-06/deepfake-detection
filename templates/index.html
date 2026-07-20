@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepfake Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Deepfake Video Detector</h1>
+      <p class="subtitle">Frequency + texture + noise-residual feature fusion, classical ML classifier.</p>
+    </header>
+
+    <section id="upload-section" class="card">
+      <div id="drop-zone" class="drop-zone">
+        <p>Drag &amp; drop a video here, or</p>
+        <label for="file-input" class="file-button">Choose a video</label>
+        <input type="file" id="file-input" accept=".mp4,.avi,.mov,.mkv,.webm" hidden>
+        <p id="file-name" class="file-name"></p>
+      </div>
+      <button id="analyze-button" disabled>Analyze Video</button>
+      <p class="hint">Accepted formats: mp4, avi, mov, mkv, webm — up to 500MB.</p>
+    </section>
+
+    <section id="processing-section" class="card" hidden>
+      <div class="spinner"></div>
+      <p class="processing-title">Analyzing video…</p>
+      <p class="processing-detail">
+        This runs the full pipeline on your video: sampling frames &rarr;
+        detecting &amp; quality-filtering faces (detection confidence + blur
+        checks) &rarr; extracting DFT / LBP / noise-residual features per frame
+        &rarr; classifying each frame &rarr; confidence-weighted voting across
+        frames for a final verdict. Time depends on video length.
+      </p>
+    </section>
+
+    <section id="error-section" class="card error" hidden>
+      <p id="error-message"></p>
+      <button id="error-reset-button">Try another video</button>
+    </section>
+
+    <section id="results-section" class="card" hidden>
+      <div id="verdict" class="verdict">
+        <span id="verdict-label" class="verdict-label"></span>
+        <span id="verdict-confidence" class="verdict-confidence"></span>
+      </div>
+
+      <h2>Explainability</h2>
+      <div class="explain-grid">
+        <figure><img id="img-original" alt="Original sampled frame"><figcaption>Original frame</figcaption></figure>
+        <figure><img id="img-face" alt="Detected face crop"><figcaption>Face crop</figcaption></figure>
+        <figure><img id="img-gray" alt="Grayscale face"><figcaption>Grayscale</figcaption></figure>
+        <figure><img id="img-dft" alt="DFT magnitude spectrum"><figcaption>DFT magnitude</figcaption></figure>
+        <figure><img id="img-radial" alt="DFT radial profile plot"><figcaption>Radial profile</figcaption></figure>
+      </div>
+
+      <h2>Frame-by-frame results</h2>
+      <p id="frames-summary" class="frames-summary"></p>
+      <table id="frames-table">
+        <thead>
+          <tr><th>Frame</th><th>Prediction</th><th>Confidence</th><th>Used in vote</th></tr>
+        </thead>
+        <tbody id="frames-table-body"></tbody>
+      </table>
+
+      <button id="reset-button">Analyze another video</button>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

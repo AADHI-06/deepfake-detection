@@ -1,0 +1,24 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Dataset — FaceForensics++ requires its own license agreement to redistribute,
+# and it's 2GB+. Never commit; see CLAUDE.md for how it's expected to be placed.
+dataset/
+
+# Regenerable caches (face-embedding cache, extracted-feature cache, pretrained
+# weight downloads) — rebuilt automatically by data_split.py / train.py.
+feature_cache/
+
+# Runtime temp dir for uploaded videos (app.py deletes files after each request;
+# the folder itself is created on demand)
+uploads/
+
+# Ad hoc personal testing screenshots, not part of the build
+snapshots/
+
+# OS/editor cruft
+Thumbs.db
+.DS_Store

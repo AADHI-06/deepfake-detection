@@ -1,0 +1,9 @@
+  building real-video identity clusters (face embeddings)...
+    ...50/250 real videos embedded
+    ...100/250 real videos embedded
+    ...150/250 real videos embedded
+    ...200/250 real videos embedded
+    ...250/250 real videos embedded
+train: 160 real + 165 fake = 325 videos
+val: 40 real + 43 fake = 83 videos
+test: 50 real + 42 fake = 92 videos

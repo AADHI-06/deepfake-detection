@@ -1,0 +1,35 @@
+{
+  "selected_model": "svm",
+  "selected_model_val_accuracy": 0.9264305177111717,
+  "mlp_baseline_val_accuracy": 0.9081081081081082,
+  "candidates": {
+    "random_forest": {
+      "cv_f1_mean": 0.9382371639427879,
+      "cv_f1_std": 0.009649793486314402,
+      "best_params": {
+        "classifier__max_depth": null,
+        "classifier__min_samples_leaf": 1,
+        "classifier__n_estimators": 300
+      }
+    },
+    "gradient_boosting": {
+      "cv_f1_mean": 0.9386131867262085,
+      "cv_f1_std": 0.015384100843048193,
+      "best_params": {
+        "classifier__learning_rate": 0.1,
+        "classifier__max_depth": 4,
+        "classifier__n_estimators": 200
+      }
+    },
+    "svm": {
+      "cv_f1_mean": 0.9541313111444156,
+      "cv_f1_std": 0.012147440829636775,
+      "best_params": {
+        "classifier__C": 10,
+        "classifier__gamma": 0.01
+      }
+    }
+  },
+  "train_samples": 1445,
+  "val_samples": 370
+}

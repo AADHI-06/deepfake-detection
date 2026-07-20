@@ -1,0 +1,10 @@
+Running predictions on test set...
+  ...20/92 test videos
+  ...40/92 test videos
+  ...60/92 test videos
+  ...80/92 test videos
+  scored 91 videos, excluded 1 (no usable face)
+Test accuracy: 0.9231, ROC-AUC: 0.9684
+Saved documentation\confusion_matrix.png and documentation\roc_curve.png
+Saved documentation\evaluation_report.md
+Saved documentation\error_analysis.md
