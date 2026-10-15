@@ -143,9 +143,10 @@ snapshots/                    # UI screenshots (see below)
 Requires Python 3.13 (CPU-only; no GPU assumed anywhere in the pipeline).
 
 ```bash
-python -m venv venv && source venv/Scripts/activate   # Windows Git Bash
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
+py -3.13 -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
 ```
 
 Place the FaceForensics++ dataset at:
