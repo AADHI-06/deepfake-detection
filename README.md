@@ -145,7 +145,6 @@ Requires Python 3.13 (CPU-only; no GPU assumed anywhere in the pipeline).
 ```bash
 py -3.13 -m venv venv
 .\venv\Scripts\Activate.ps1
-python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 python -m pip install -r requirements.txt
 ```
 
